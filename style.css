@@ -1,0 +1,22 @@
+body {
+    background-color: grey;
+}
+#timer {
+    float: right;
+}
+.container {
+    
+    background-color: white;
+    height: 100vh;
+    text-align: center;
+    align-items: center;
+}
+.wrapper {
+    width: 100%;
+}
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
