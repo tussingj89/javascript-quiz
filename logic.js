@@ -10,9 +10,9 @@ var answer1 = document.querySelector("#answer");
 var start1 = document.querySelector("#buttonStart");
 
 
-var secondsLeft = 190;
+var secondsLeft = 90;
 var scoreBoard1 = 0;
-scoreBoard1.innerHTML = scoreBoard1;
+highscore1.innerHTML = ("highscore: " + scoreBoard1);
 var ticking;
 var questionsIndex = 9;
 var currentQuestionIndex = 0;
@@ -60,6 +60,7 @@ function tick() {
       button4.hidden = true;
       answer1.hidden = true;
       textSpace1.innerHTML = ("your highscore is " + scoreBoard1 + " , good job!");
+      highscore1.innerHTML = ("highscore: " +scoreBoard1);
     };
     var correctAnswer;
   function selectOption(){
