@@ -8,11 +8,13 @@ var button3 = document.querySelector("#buttonThree");
 var button4 = document.querySelector("#buttonFour");
 var answer1 = document.querySelector("#answer");
 var start1 = document.querySelector("#buttonStart");
-
+var sumitRow1 = document.getElementById("submit-row");
+var submitButton1 = document.getElementById("submit");
+var initials1 = document.getElementById("your intials here");
 
 var secondsLeft = 90;
 var scoreBoard1 = 0;
-highscore1.innerHTML = ("highscore: " + scoreBoard1);
+highscore1.innerHTML = (localStorage.getItem("intials-box", initials1 ) + " , Your previous high score was: " + localStorage.getItem("highscore", scoreBoard1));
 var ticking;
 var questionsIndex = 9;
 var currentQuestionIndex = 0;
@@ -59,8 +61,9 @@ function tick() {
       button3.hidden = true;
       button4.hidden = true;
       answer1.hidden = true;
-      textSpace1.innerHTML = ("your highscore is " + scoreBoard1 + " , good job!");
-      highscore1.innerHTML = ("highscore: " +scoreBoard1);
+      sumitRow1.hidden = false;
+      textSpace1.innerHTML = ("Your new high score is " + scoreBoard1 + ". Good job!");
+      highscore1.innerHTML = ("Your new high score is: " + scoreBoard1);
     };
     var correctAnswer;
   function selectOption(){
@@ -79,7 +82,7 @@ function tick() {
     }
     else {
         answer1.hidden= false;
-        answer1.innerHTML = "incorrect, correct answer is: " + questionsArray[currentQuestionIndex].answer;
+        answer1.innerHTML = "incorrect, correct answer was: " + questionsArray[currentQuestionIndex].answer;
         currentQuestionIndex++;
         if (currentQuestionIndex <= questionsIndex) {
             startQuestions();
@@ -89,6 +92,13 @@ function tick() {
         }
   };
 }
+var scoreStorage = [];
+var highscore = [];
+
+function storeScore() {
+    localStorage.setItem("initals-box", initials1)
+    localStorage.setItem("highscore", scoreBoard1)
+};
 
 // objects to hold questions and answers
 var questionsArray = [{
@@ -186,3 +196,4 @@ button4.addEventListener("click", function() {
     console.log(correctAnswer)
     selectOption();
 });
+submitButton1.addEventListener("click", storeScore);
