@@ -34,8 +34,6 @@ Below is a sample of the code that I used to make my javascript quiz. As it show
         else {
             stopgame();
         }
-  };
-}
 
 # snapshot of the quiz page
 
