@@ -1,22 +1,37 @@
 body {
-    background-color: grey;
+    background-color: lightgrey;
+}
+#highscore {
+    color: #02325f;
 }
 #timer {
     float: right;
+    color: #02325f;
 }
 .container {
     
     background-color: white;
-    height: 100vh;
+    height: 80vh;
     text-align: center;
     align-items: center;
 }
 .wrapper {
     width: 100%;
 }
+#text-space {
+    font-size: larger;
+    font-weight: bolder;
+
+}
 .row {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 5px;
+}
+@media screen and (max-width: 768px) {
+    #timer {
+        float: left;
+    
+}
 }
