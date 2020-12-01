@@ -37,4 +37,4 @@ Below is a sample of the code that I used to make my javascript quiz. As it show
 
 # snapshot of the quiz page
 
-![javascript quiz](./assets/javascript-quiz.png)
+![javascript quiz](assets/javascriptquiz.png)
