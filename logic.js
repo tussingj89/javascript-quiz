@@ -10,14 +10,16 @@ var answer1 = document.querySelector("#answer");
 var start1 = document.querySelector("#buttonStart");
 var sumitRow1 = document.getElementById("submit-row");
 var submitButton1 = document.getElementById("submit");
-var initials1 = document.getElementById("your intials here");
+var initials1 = document.getElementById("intials-box");
 
 var secondsLeft = 90;
 var scoreBoard1 = 0;
-highscore1.innerHTML = (localStorage.getItem("intials-box", initials1 ) + " , Your previous high score was: " + localStorage.getItem("highscore", scoreBoard1));
+highscore1.innerHTML = (JSON.parse(localStorage.getItem(initialsStorage)) + " your previous high score was: " + localStorage.getItem("highscore"));
 var ticking;
 var questionsIndex = 9;
 var currentQuestionIndex = 0;
+var initialsStorage = [];
+var highscore = [];
 
 // functions
 function tick() {
@@ -92,12 +94,12 @@ function tick() {
         }
   };
 }
-var scoreStorage = [];
-var highscore = [];
+
 
 function storeScore() {
-    localStorage.setItem("initals-box", initials1)
+    localStorage.setItem("initialsStorage", JSON.stringify(initials1))
     localStorage.setItem("highscore", scoreBoard1)
+
 };
 
 // objects to hold questions and answers
